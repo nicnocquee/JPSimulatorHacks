@@ -206,7 +206,7 @@ static NSTimeInterval JPSimulatorHacksTimeout = 15.0f;
         if (![db open]) continue;
 
         NSString *query = @"REPLACE INTO access (service, client, client_type, allowed, prompt_count) VALUES (?, ?, ?, ?, ?)";
-        NSArray *parameters = @[service, bundleIdentifier, @"0", [@(allowed) stringValue], @"0"];
+        NSArray *parameters = @[service, bundleIdentifier, @"0", [@(allowed) stringValue], @"1"];
         if ([db executeUpdate:query withArgumentsInArray:parameters]) {
             success = YES;
         }
